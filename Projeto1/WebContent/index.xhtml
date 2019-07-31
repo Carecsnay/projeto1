@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+      
+ 	 <h:head></h:head>
+	<h:body>
+		<h:form>
+			<h:panelGrid columns="2">
+		<p:outputLabel  value="Nome:" />
+    		<p:inputText value="#{cadastrarMBean.pes.nome}" />
+    	<p:outputLabel  value="CPF:" />
+    		<p:inputMask value="#{cadastrarMBean.pes.cpf}" mask="999.999.999-99" />
+    	<p:outputLabel  value="R.G.:" />
+    		<p:inputMask value="#{cadastrarMBean.pes.rg}" mask="999.999.9" />
+    	<p:outputLabel  value="Data de Nascimento:" />
+    		<p:inputMask value="#{cadastrarMBean.pes.nascimento}" mask="99/99/9999" />
+    	<p:outputLabel  value="Endereço:" />
+    		<p:inputText value="#{cadastrarMBean.pes.endereco}" />
+    	<p:outputLabel value="Telefone: " />
+       		<p:inputMask value="#{cadastrarMBean.pes.telefone}" mask="(99) 99999-9999" />
+       	<p:outputLabel  value="Sexo:" />
+       		<p:selectOneMenu value="#{cadastrarMBean.pes.sexo}" style="width:125px">
+            <f:selectItem itemLabel="Selecione" itemValue="" />
+            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+            <f:selectItem itemLabel="Outros" itemValue="Outros" />
+       		</p:selectOneMenu>		
+    		
+    	<p:commandButton value="Salvar" action="#{cadastrarMBean.salvarDados}" style="margin-right:20px;" ajax="false" />	
+    </h:panelGrid>
+	</h:form>
+	
+	</h:body>
+
+</html>
